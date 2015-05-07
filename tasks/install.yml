@@ -56,6 +56,11 @@
     recurse=yes
   when: consul_was_downloaded|changed
 
+- name: copy consul defaults
+  template: >
+    src=consul.default.j2
+    dest=/etc/default/consul
+
 - name: copy consul upstart script
   template: >
     src=consul.conf.j2
