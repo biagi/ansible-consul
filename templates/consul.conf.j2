@@ -1,6 +1,6 @@
 # Consul Agent (Upstart unit)
 description "Consul Agent"
-start on (local-filesystems and net-device-up IFACE!=lo)
+start on (local-filesystems and net-device-up IFACE!=lo and stopped cloud-final)
 stop on runlevel [016]
 
 respawn
